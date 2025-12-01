@@ -1,2 +1,9 @@
-# Sistema de controle academico
-Sistema que gerencia o ciclo acadêmico, da matrícula ao acompanhamento de disciplinas e turmas. Controla dados de alunos, professores, cursos, disciplinas, semestres, horários e avaliações (notas, atividades e feedback). Voltado para institutos de ensino e secretarias acadêmicas.
+<div align="center">
+
+<h1 style="color: #20B2AA;" > Sistema de banco de dados - Controle de sistema academico</h1>
+</h3> Projeto Academico - Faculdade Cruzeiro do Sul </h3>
+
+- Centralização de informações acadêmicas
+- Redução de erros manuais
+- Tomada de decisão baseada em dados
+- Otimização de recursos (salas, professores, horários)
