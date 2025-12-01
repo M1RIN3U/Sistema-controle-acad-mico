@@ -7,3 +7,8 @@
 - Redução de erros manuais
 - Tomada de decisão baseada em dados
 - Otimização de recursos (salas, professores, horários)
+- Acesso organizado ao histórico acadêmico
+- Transparência no processo avaliativo
+- Facilidade no controle de atividades complementares
+- Comunicação eficiente com a instituição
+
