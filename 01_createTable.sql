@@ -1,6 +1,7 @@
------TABELA ALUNO----------
 BEGIN TRANSACTION;
-Create table Aluno(
+
+-- TABELA ALUNO
+CREATE TABLE Aluno(
     id_aluno INTEGER PRIMARY KEY AUTOINCREMENT, 
     nome TEXT(80) NOT NULL,
     cpf TEXT(14) NOT NULL,
@@ -8,8 +9,8 @@ Create table Aluno(
     email TEXT NOT NULL
 );
 
-------TABELA MATRICULA-------
-Create table Matricula(
+-- TABELA MATRICULA
+CREATE TABLE Matricula(
     id_matricula INTEGER PRIMARY KEY AUTOINCREMENT,
     rgm TEXT(8) NOT NULL,
     curso TEXT(80) NOT NULL,
@@ -17,8 +18,8 @@ Create table Matricula(
     FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
 );
 
-------TABELA PROFESSOR-------
-Create table professor(
+-- TABELA PROFESSOR
+CREATE TABLE professor(
     id_professor INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT(80) NOT NULL,
     siape TEXT(20) NOT NULL,
@@ -26,8 +27,8 @@ Create table professor(
     email TEXT NOT NULL
 );
 
------TABELA DISCIPLINA-------
-Create table disciplina(
+-- TABELA DISCIPLINA
+CREATE TABLE disciplina(
     id_disciplina INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT(80) NOT NULL,
     semestre TEXT(3), 
@@ -37,12 +38,12 @@ Create table disciplina(
     atividades_extracurriculares TEXT,
     id_aluno INTEGER,
     id_professor INTEGER,
-    FOREIGN KEY (id_aluno) REFERENCES Aluno(id_aluno)
+    FOREIGN KEY (id_aluno) REFERENCES Aluno(id_aluno),
     FOREIGN KEY (id_professor) REFERENCES professor(id_professor)
 );
 
-------TABELA TURMA-------
-Create table Turma(
+-- TABELA TURMA
+CREATE TABLE Turma(
     id_turma INTEGER PRIMARY KEY AUTOINCREMENT,
     alunos INT,
     periodo TEXT,
@@ -50,18 +51,19 @@ Create table Turma(
     id_disciplina INTEGER,
     id_aluno INTEGER,
     id_professor INTEGER,
-    FOREIGN KEY (id_professor) REFERENCES professor(id_professor)
-    FOREIGN KEY (id_aluno) REFERENCES Aluno(id_aluno)
+    FOREIGN KEY (id_professor) REFERENCES professor(id_professor),
+    FOREIGN KEY (id_aluno) REFERENCES Aluno(id_aluno),
     FOREIGN KEY (id_disciplina) REFERENCES disciplina(id_disciplina)
 );
 
---------TABELA FEEDBACK_TURMA----
-Create table Feedback_turma(
+-- TABELA FEEDBACK_TURMA
+CREATE TABLE Feedback_turma(
     feedback TEXT(100),
     id_turma INTEGER,
     id_professor INTEGER,
-    FOREIGN KEY (id_turma) REFERENCES Turma(id_turma)
+    FOREIGN KEY (id_turma) REFERENCES Turma(id_turma),
     FOREIGN KEY (id_professor) REFERENCES professor(id_professor) 
 );
 
-commit
+-- Confirma todas as operações
+COMMIT;
