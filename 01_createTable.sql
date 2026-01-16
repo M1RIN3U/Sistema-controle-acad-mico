@@ -62,5 +62,7 @@ Create table Feedback_turma(
     id_professor INTEGER,
     FOREIGN KEY (id_turma) REFERENCES Turma(id_turma)
     FOREIGN KEY (id_professor) REFERENCES professor(id_professor) 
+
+    commit
 );
 
